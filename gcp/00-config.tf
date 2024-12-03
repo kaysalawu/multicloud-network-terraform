@@ -170,7 +170,7 @@ locals {
 
   hub1_subnets = {
     hub1-main         = { region = local.hub1_region, ip_cidr_range = "10.1.1.0/24", ipv6 = {}, enable_private_access = true, flow_logs_config = local.flow_logs_config, }
-    hub1-gke          = { region = local.hub1_region, ip_cidr_range = "10.1.2.0/24", ipv6 = {}, enable_private_access = true, secondary_ip_ranges = { pods = "10.1.100.0/23", services = "10.1.102.0/24" } }
+    hub1-gke          = { region = local.hub1_region, ip_cidr_range = "10.1.2.0/24", ipv6 = {}, enable_private_access = true, secondary_ip_ranges = { pod = "100.96.16.0/20", svc = "100.96.32.0/20" } }
     hub1-reg-proxy    = { region = local.hub1_region, ip_cidr_range = "10.1.3.0/24", ipv6 = {}, enable_private_access = false, purpose = "REGIONAL_MANAGED_PROXY", role = "ACTIVE" }
     hub1-psc-ilb-nat  = { region = local.hub1_region, ip_cidr_range = "10.1.4.0/24", ipv6 = {}, enable_private_access = false, purpose = "PRIVATE_SERVICE_CONNECT" }
     hub1-psc-ilb-nat6 = { region = local.hub1_region, ip_cidr_range = "10.1.5.0/24", ipv6 = {}, enable_private_access = false, purpose = "PRIVATE_SERVICE_CONNECT" }
@@ -226,7 +226,7 @@ locals {
 
   hub2_subnets = {
     hub2-main         = { region = local.hub2_region, ip_cidr_range = "10.2.1.0/24", ipv6 = {}, enable_private_access = true, flow_logs_config = local.flow_logs_config, }
-    hub2-gke          = { region = local.hub2_region, ip_cidr_range = "10.2.2.0/24", ipv6 = {}, enable_private_access = true, secondary_ip_ranges = { pods = "10.2.100.0/23", services = "10.2.102.0/24" } }
+    hub2-gke          = { region = local.hub2_region, ip_cidr_range = "10.2.2.0/24", ipv6 = {}, enable_private_access = true, secondary_ip_ranges = { pod = "100.96.48.0/20", svc = "100.96.64.0/20" } }
     hub2-reg-proxy    = { region = local.hub2_region, ip_cidr_range = "10.2.3.0/24", ipv6 = {}, enable_private_access = false, purpose = "REGIONAL_MANAGED_PROXY", role = "ACTIVE" }
     hub2-psc-ilb-nat  = { region = local.hub2_region, ip_cidr_range = "10.2.4.0/24", ipv6 = {}, enable_private_access = false, purpose = "PRIVATE_SERVICE_CONNECT" }
     hub2-psc-ilb-nat6 = { region = local.hub2_region, ip_cidr_range = "10.2.5.0/24", ipv6 = {}, enable_private_access = false, purpose = "PRIVATE_SERVICE_CONNECT" }
