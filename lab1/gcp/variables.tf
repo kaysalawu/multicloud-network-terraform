@@ -6,7 +6,7 @@ variable "tf_service_account" {
 
 variable "prefix" {
   description = "prefix used for all resources"
-  default     = ""
+  default     = "lab1"
 }
 
 variable "project_id" {
